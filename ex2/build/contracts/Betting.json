@@ -1,0 +1,189 @@
+{
+  "contract_name": "Betting",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "gamblerB",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "gamblerA",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "withdrawAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [
+        {
+          "name": "remainingBal",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "checkOutcomes",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "checkWinnings",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_outcome",
+          "type": "uint256"
+        }
+      ],
+      "name": "makeBet",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "oracle",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_outcome",
+          "type": "uint256"
+        }
+      ],
+      "name": "makeDecision",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_oracle",
+          "type": "address"
+        }
+      ],
+      "name": "chooseOracle",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_outcomes",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "BettingContract",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "payable": true,
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "gambler",
+          "type": "address"
+        }
+      ],
+      "name": "BetMade",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "BetClosed",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b6103958061001f6000396000f300606060405236156100ac5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663113023ca81146100b45780631def0573146100e35780632e1a7d4d146101125780632f2786681461013a5780635ee715d6146101a1578063718cc769146101c65780637dc0d1d0146101e557806380c1367e146102145780638da5cb5b1461022c578063d0aa7e251461025b578063dcdbae0114610296575b5b600080fd5b005b34156100bf57600080fd5b6100c76102e7565b604051600160a060020a03909116815260200160405180910390f35b34156100ee57600080fd5b6100c76102f6565b604051600160a060020a03909116815260200160405180910390f35b341561011d57600080fd5b610128600435610305565b60405190815260200160405180910390f35b341561014557600080fd5b61014d61030d565b60405160208082528190810183818151815260200191508051906020019060200280838360005b8381101561018d5780820151818401525b602001610174565b505050509050019250505060405180910390f35b34156101ac57600080fd5b610128610319565b60405190815260200160405180910390f35b6101d1600435610305565b604051901515815260200160405180910390f35b34156101f057600080fd5b6100c7610327565b604051600160a060020a03909116815260200160405180910390f35b341561021f57600080fd5b6100b2600435610336565b005b341561023757600080fd5b6100c761033b565b604051600160a060020a03909116815260200160405180910390f35b341561026657600080fd5b6100c7600160a060020a0360043516610305565b604051600160a060020a03909116815260200160405180910390f35b34156102a157600080fd5b6100b2600460248135818101908301358060208181020160405190810160405280939291908181526020018383602002808284375094965061033695505050505050565b005b600254600160a060020a031681565b600154600160a060020a031681565b60005b919050565b610315610357565b5b90565b60005b90565b60005b919050565b600354600160a060020a031681565b5b5b50565b600054600160a060020a031681565b60005b5b919050565b5b50565b602060405190810160405260008152905600a165627a7a7230582013a806224f308cb45ceb848fc980a4a68c4af7e4ffc9a7e72059155dd4a648400029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1506831552698
+}
